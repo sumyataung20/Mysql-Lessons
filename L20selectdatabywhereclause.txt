@@ -1,0 +1,95 @@
+=> Select Data By Using Where Clause
+
+=>Syntax
+SELECT * 
+FROM tablename
+WHERE condition;
+
+SELECT col1,col2,col3...
+FROM tablename
+WHERE condition;
+
+= Operators in the WHERE Clause
+
+=                Equal
+
+>                Greater than
+
+<                less than 
+
+>=               Greater than or Equal 
+
+<=               less than or Equal
+
+<>               Not equal. Note: In some version of SQL, this operator written as !=
+
+BETWEEN          Between as a certain range
+
+LIKE             Search for a pattern 
+
+IN               
+
+(total 9 )
+
+SELECT * FROM customers
+WHERE city = 'mandalay';
+
+SELECT firstname,lastname,city,country FROM customers
+WHERE city LIKE "mandalay";
+
+SELECT * FROM customers
+WHERE id = 5;
+
+
+=>BETWEEN with AND
+
+SELECT * FROM customers;
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount BETWEEN 200000 AND 300000;
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount BETWEEN 200000 AND 300000 AND city = 'mandalay';
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE city = 'mandalay' AND amount BETWEEN 200000 AND 300000;
+
+***error 
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE city = 'mandalay' && amount BETWEEN 200000 && 300000;
+
+=> NOT BETWEEN with AND
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount NOT BETWEEN 200000 AND 300000;
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount NOT BETWEEN 200000 AND 300000 AND city <> 'mandalay';
+
+SELECT id,firstname,lastname,age,amount,city FROM customers
+WHERE amount NOT BETWEEN 200000 AND 300000 AND NOT city = 'mandalay';
+
+=> MODULE ( + - * / %)
+
+SELECT * FROM customers
+WHERE age+9 = 30;
+
+SELECT * FROM customers
+WHERE age+20 = 50;   //age = 30
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE age * 2 > 30;
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE age - 5 = 25;
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE amount / 2 > 100000;
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE age % 2 LIKE 0;
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE age % 2 <> 0;
+
+SELECT id,firstname,lastname,age,amount,city,country FROM customers
+WHERE age % 2 NOT LIKE 0;

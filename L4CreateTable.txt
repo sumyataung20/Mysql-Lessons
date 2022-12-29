@@ -1,0 +1,227 @@
+=> Choose Database
+USE wdf7043
+
+=>Show table (0ne table)
+*Method1
+DESCRIBE tablename   (Check Table Structure)
+DESC tablename
+
+*Method2
+SHOW COLUMNS FROM tablename;
+
+#Check table from current db to another db
+SHOW COLUMNS FROM database.tablename;
+#SHOW COLUMNS FROM realserver.wdf7043;
+SHOW COLUMNS FROM tablename IN databasename;
+#SHOW COLUMNS FROM persons IN wdf7043
+
+
+
+=>Show Table
+SHOW TABLES
+SHOW FULL TABLES (See also the types)
+*Check tables from current db to another db
+SHOW TABLES FROM databasename;
+SHOW TABLES IN databasename;
+
+SHOW FULL TABLES FROM databasename;
+SHOW FULL TABLES IN databasename;
+
+
+
+
+=>Create Table 
+=> Syntax to create a Table
+=> CREATE TABLE tablenames(
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+    .......
+);    (plural)
+
+to create Database => CREATE DATABASE wdf7043
+
+CREATE TABLE persons(
+     personid  INT,
+     firstname VARCHAR(255),
+     lastname VARCHAR(255),
+     city VARCHAR(255),
+     address VARCHAR(255)
+
+);
+
+=> Drop Table(Single)
+
+DROP TABLE tablename;
+DROP TABLE IF EXISTS tablename;
+*Drop table from current db to another db;
+DROP TABLE databasename.tablename;
+D
+
+=> Drop Tables(Multi)
+DROP TABLE tablename,tablename,tablename;
+DROP TABLE IF EXISTS tablename,tablename,tablename;
+*Drop table from current db to another db;
+DROP TABLE databasename.tablename,tablename;
+DROP TABLE IF EXISTS databasename.tablename,tablename,tablename;
+
+----------------------------------------------------------------------------
+
+
+*Exercise
+
+CREATE TABLE abc(
+    name VARCHAR(10)
+)
+
+CREATE TABLE IF NOT EXISTS abc(
+    name VARCHAR(10)
+)
+
+RECREATING THE EXISTING TABLE => ERROR
+
+
+TRUNCATE 
+
+CREATE TABLE IF NOT EXISTS monitors(
+    brand VARCHAR(100),
+    price INT
+);
+
+DESC monitors;
+DESCRIBE monitors;
+
+SELECT * FROM monitors;
+
+DROP TABLE IF EXISTS wdf007.monitors;
+
+
+monitors = tablename;
+TRUNCATE
+TRUNCATE TABLE monitors;
+TRUNCATE TABLE wdf7043.monitors;
+DELETE FROM monitors;
+
+
+Change column name
+
+=> ALTER TABLE tablename
+=> RENAME TO newtablename;
+
+=> ALTER TABLE tablename
+=> CHANGE COLUMN oldcolname newcolname datatype
+
+
+ALTER TABLE itaccessories
+CHANGE COLUMN stock totalquantity INT;
+
+ALTER TABLE itaccessories
+CHANGE COLUMN madeby manufacturedby VARCHAR(30);
+
+ALTER TABLE itaccessories
+CHANGE COLUMN manufacturedby manufacturedby VARCHAR(30);
+
+=> MODIFY column in table(Use for change column data type)
+
+=> Syntax (FA)
+
+ALTER TABLE tablename
+MODIFY columnname newdatatype
+
+=> syntax multi
+ALTER TABLE tablename
+MODIFY columnname newdatatype, 
+MODIFY columnname newdatatype;
+
+
+Exercise
+
+DESC Hello
+
+ALTER TABLE Hello
+MODIFY ownBy INT(10)
+
+DESC Hello
+SELECT * FROM Hello
+
+
+ALTER TABLE Hello
+MODIFY manufacturedby VARCHAR(50) NOT NULL;
+
+DESC Hello
+
+ALTER TABLE Hello
+MODIFY item VARCHAR(100) NOT NULL;
+
+=> ALTER TABLE itaccessories
+MODIFY item VARCHAR(50) NULL,
+MODIFY brand VARCHAR(30) NOT NULL;
+*error* = bcuz data value null is already there
+
+=> Move Column
+
+ALTER TABLE itaccessories
+MODIFY unitprice DECIMAL(12,2) NOT NULL 
+AFTER brand;
+
+-----------------------------------------------------------
+DROP COLUMN IN TABLE
+
+=> Syntax ( Single )
+ALTER TABLE tablename
+DROP COLUMN columnname
+
+=> Syntax(Multi)
+ALTER TABLE tablename
+DROP COLUMN columnname,
+DROP COLUMN columnname;
+
+------------------------------------------------------
+
+=> Method1
+
+ADD PRIMARY KEY  (must be INT)
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST;
+
+DESC itaccessories
+SHOW INDEX FROM itaccessories;
+ 
+=> Method2
+
+ALTER TABLE itaccessories
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST, 
+ADD PRIMARY KEY(id)
+
+
+-------------------------------------------------------
+
+DROP PRIMARY KEY
+
+ALTER TABLE itaccessories
+DROP PRIMARY KEY *error* 
+[first, need to remove auto increment by modify]
+
+ALTER TABLE itaccessories
+MODIFY id INT NOT NULL;
+ALTER TABLE itaccessories
+DROP PRIMARY KEY;
+
+------------------------------------------------------------
+
+CREATE TABLE AS STATEMENT (CLONE | COPY)
+
+syntax||
+
+CREATE TABLE IF NOT EXISTS newtable AS 
+SELECT * FROM existingtable;
+
+DESC members;
+SELECT * FROM members;
+
+CREATE TABLE IF NOT EXISTS workers AS 
+SELECT * FROM members;
+
+-------------------------------------------------------------
+

@@ -1,0 +1,15 @@
+=> affect only on the result 
+=> not on the data table
+
+=> Aliases (READ/ just result)
+
+Syntax
+
+SELECT colname AS aliasname FROM tablename;
+___________________________________________________
+
+SELECT * FROM members;
+
+SELECT firstname AS 1stname FROM members;
+SELECT id , firstname AS 1stname, lastname AS lstname FROM members;
+SELECT id , id AS No., firstname AS 1stname, lastname AS lstname FROM members;

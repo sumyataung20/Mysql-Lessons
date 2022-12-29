@@ -1,0 +1,35 @@
+=> CONCAT
+
+SELECT CONCAT(colname1,colname2,3,4,............) FROM tablename;
+
+----------------------------------------------------------
+
+SELECT CONCAT('Hello','world')
+SELECT CONCAT('Hello',' ','world')
+SELECT CONCAT('Hello','...','world')
+SELECT CONCAT('Hello','...','world', '', 'We are welcome')
+
+SELECT CONCAT('Hello',12345);
+SELECT CONCAT('Hello',12345);
+SELECT CONCAT(10,20) //1020
+
+SELECT * FROM members;
+
+SELECT CONCAT(firstname,' ',lastname) FROM members;
+
+SELECT CONCAT(firstname,' ',lastname) AS fullname , age FROM members;
+---------------------------------------------------------------------------------
+
+=> CONCAT_WS ( CONCAT with seperator)
+
+=Syntax
+
+SELECT CONCAT_WS('-',colname1,colname2) FROM tablename;
+
+=EXERCISE
+
+SELECT CONCAT(firstname,'-',lastname) FROM members;
+SELECT CONCAT_WS('-',firstname,lastname) FROM mambers;
+
+SELECT CONCAT_WS('-',firstname,lastname) AS fullname FROM mambers;
+

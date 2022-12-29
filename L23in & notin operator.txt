@@ -1,0 +1,66 @@
+=> IN / NOT IN operator
+
+=> IN ( shi lr ma shi lr sit py, shi yin 1, ma shi yin 0)
+
+SELECT 10 IN (10,20,30,40,50,60);  //result 1
+
+SELECT 100 IN (10,20,30,40,50,60);  //result 0
+
+
+SELECT 10 NOT IN (10,20,30,40,50,60);  //result 0
+
+SELECT 10O NOT IN (10,20,30,40,50,60);  //result 1
+
+//result 1, not case-sensitive
+SELECT 'aung aung' IN ('maung maung', 'aung aung', 'zaw zaw')  result 1
+SELECT 'aung aung' IN ('maung maung', 'Aung Aung', 'zaw zaw')  result 1
+
+result = 0
+SELECT 'aung' IN ('maung maung', 'Aung Aung', 'zaw zaw') //pattern nk sit ma ya
+
+NOT IN
+//result 0
+SELECT 'aung aung' NOT IN ('maung maung', 'aung aung', 'zaw zaw') 
+SELECT 'aung aung' NOT IN ('maung maung', 'Aung Aung', 'zaw zaw') 
+
+
+-------------------------------------------
+
+EXERCISE
+
+=> IN
+
+SELECT * FROM customers;
+
+SELECT firstname,lastname,amount,age,city FROM customers
+WHERE city = 'mandalay';
+
+SELECT firstname,lastname,amount,age,city FROM customers
+WHERE city IN ('mandalay');
+
+SELECT firstname,lastname,amount,age,city FROM customers
+WHERE city IN ('mandalay', 'yangon');
+
+SELECT firstname,lastname,amount,age,city FROM customers
+WHERE city = 'mandalay' OR city = 'yangon';
+
+SELECT firstname,lastname,amount,age,city FROM customers
+WHERE city IN ('mandalay', 'yangon')
+ORDER BY city ASC;
+
+=> NOT IN
+
+SELECT * FROM customers
+WHERE city NOT IN ('mandalay')
+LIMIT 3;
+
+SELECT * FROM customers
+WHERE city NOT IN ('mandalay','sule')
+ORDER BY id DESC; 
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+Useful Calculate Function
+
+COUNT()
+AVG() Average
+SUM()
+MIN()
+MAX()   ( Aggregate Functions )
+
+Syntax => Count()
+
+SELECT COUNT(column) FROM tablename 
+WHERE condition;
+
+Syntax = AVG()
+
+SELECT AVG(column) FROM tablename
+WHERE condition 
+
+Syntax = SUM()
+SELECT SUM(column) FROM tablename
+WHERE condition;
+
+Syntax = MIN()
+SELECT MIN(column) FROM tablename
+WHERE condition;
+
+
+Syntax = MAX()
+SELECT MAX(column) FROM tablename
+WHERE condition;
+
+-------------------------------------------------
+
+=EXERCISE 
+SELECT COUNT(amount) FROM customers 
+WHERE amount > 300000;
+
+SELECT COUNT(id) FROM customers 
+WHERE firstname = 'aung'
+
+SELECT SUM(amount) FROM customers
+WHERE amount > 100000;
+
+SELECT SUM(amount) FROM customers
+WHERE city = 'mandalay';
+
+
+----------------------------------------------
+
+AVG()
+
+SELECT * FROM customers
+WHERE city = 'mandalay'
+
+SELECT AVG(age) FROM customers 
+WHERE city = 'mandalay'
+
+SELECT AVG(amount) FROM customers 
+WHERE city = 'mandalay'
+
+SELECT AVG(age) FROM customers
+WHERE country = "thailand"
+
+
+----------------------------------------------
+MIN() => find the lowest
+
+SELECT MIN(amount) FROM customers
+WHERE gender = 'female'
+
+
+SELECT MIN(age) FROM customers
+
+SELECT * FROM customers
+WHERE city = "yangon"
+
+SELECT COUNT(*), MIN(amount) FROM customers
+WHERE city = "mandalay"
+
+SELECT * FROM customers
+WHERE amount = 800000;
+
+SELECT COUNT(*) FROM customers
+WHERE amount = (SELECT MIN(amount) FROM customers);
+
+-----------------------------------------------------
+
+MAX() find the highest values
+
+SELECT MAX(age) FROM customers;
+
+SELECT MAX(amount) FROM customers
+
+SELECT * FROM customers
+WHERE city = "yangon"
+ 
+SELECT MAX(amount) FROM customers
+WHERE city = "yangon" 
+
+SELECT COUNT(*),MAX(amount) FROM customers
+WHERE city = "yangon" 
+
+SELECT * FROM customers
+WHERE amount = 800000;
+
+SELECT COUNT(*) FROM customers
+WHERE amount = (SELECT MAX(amount) FROM customers)
+
+
+
+

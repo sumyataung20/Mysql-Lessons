@@ -1,0 +1,54 @@
+=> SELECT DATA
+
+Method 1 = Syntax
+
+SELECT * FROM tablename;
+
+Method 2 = Syntax
+
+SELECT column1 FROM tablename;
+SELECT column1,col2,col3,... FROM tablename;
+
+SELECT * FROM persons;
+
+SELECT firstname,city FROM persons;
+
+SELECT city,firstname,lastname FROM persons;
+
+--------------------------------------------------------
+
+=> Add New Columns to table
+=> Syntax (Single)
+
+Method 1
+
+ALTER TABLE tablename
+ADD COLUMN columnname datatype;
+
+Method2  
+ALTER TABLE tablename
+ADD COLUMN columnname datatype FIRST|AFTER existingcolname;
+
+=> Syntax(Multi)
+
+Method1
+ALTER TABLE tablename
+ADD COLUMN columnname1 datatype;
+ADD COLUMN columnname2 datatype;
+
+
+Method2
+ALTER TABLE tablename
+
+ADD COLUMN columnname1 datatype FIRST|AFTER existingcolname;
+ADD COLUMN columnname2 datatype FIRST|AFTER existingcolname;
+
+SELECT * FROM itaccessories
+
+ALTER TABLE itaccessories
+ADD COLUMN brand VARCHAR(50);
+
+DESC itaccessories;
+
+SELECT * FROM itaccessories
+

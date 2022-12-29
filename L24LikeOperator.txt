@@ -1,0 +1,89 @@
+=> LIKE Operator
+=> It works in a pattern
+
+SELECT col1, col2, ... FROM tablename
+WHERE column LIKE pattern;
+
+LIKE operator's pattern (7 types)
+
+WHERE column LIKE 'a%'   => Find any values that start with 'a'
+
+WHERE column LIKE '%a'   => Find any values that end with 'a'
+
+WHERE column LIKE '%or%  => Find any values that have 'or' in any position
+
+WHERE column LIKE '_r%'  => Find any values that have 'r' in second position
+
+WHERE column LIKE 'a_%'  => Find any values that starts with 'a' and at least 2 characters in length
+
+WHERE column LIKE 'a___%' => Find any values that start with 'a' and at least 3 characters in length
+
+WHERE column LIKE 'a%o'   => Find any values that start with 'a' and ends with 'o'
+
+=> EXERCISE 
+
+SELECT firstname,lastname,age,city FROM customers;
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE 'aung'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE 'm%'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE '%g'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE '%n'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE '%un'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE '%zaw%'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE '_a%'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE 'a__%'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE 'a%g'
+
+SELECT firstname,lastname,age,city FROM customers
+WHERE firstname LIKE 'a___%'
+
+=EXERCISE ( LIKE '___')
+
+SELECT * FROM customers;
+
+SELECT * FROM customer;
+WHERE amount LIKE '____';
+
+SELECT * FROM customer;
+WHERE amount LIKE '_____';
+
+SELECT * FROM customers
+WHERE amount LIKE '______'; (Thein ganan)
+
+=EXERCISE (LIKE %) => anything
+ 
+SELECT * FROM customers
+WHERE amount LIKE '%'
+
+SELECT * FROM customers
+WHERE firstname LIKE '%\_%';
+
+SELECT * FROM customers
+WHERE firstname LIKE '%\%%';
+
+---------------------------------------------------
+
+
+
+
+
+
+
+

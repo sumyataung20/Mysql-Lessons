@@ -1,0 +1,102 @@
+=> Comments
+
+Single line Comment
+
+# comment
+
+-- comment
+
+/* comment here */
+
+Multi Line Comment 
+
+/*
+-------------------------------------------
+*/
+
+=> Arithemethic Operators( 5 types)
+
+Operators(num)                    Meaning                   Operate
++(Add)                             addition                  numbers
+-(substract)                       substraction
+*(multiply)                        multiplication
+/(Divide)                           Division
+%(Modulus)                           Remainder                
+
+----------------------------------------------------------------------------------
+
+Exercise Addition Operator = Syntax
+
+SELECT 10+2;
+SELECT '10' + 2;
+SELECT '10' + '2';
+SELECT 10 + '2';
+SELECT 10+20, 20 + 30;
+SELECT '100' + '200', '300' + 400;
+SELECT 100 + 'aung aung';          result = 100 #do not use
+SELECT '100' + 'aung aung';        result = 100
+
+#data type doesn't matter
+
+Exercise Substraction Operator = Syntax
+
+SELECT 10 - 2;
+SELECT 20-10, 30-15;
+SELECT '1000'-'500', '500' - '600';
+
+Exercise multiplication operator = Syntax
+SELECT 10 * 2;
+SELECT 5 * 3, 15 * 5
+SELECT '20' * 3, '100' * '5';
+
+Exercise Division Operator = Syntax
+SELECT 10 / 2;
+SELECT 2/3, 3/5;
+SELECT '100'/25, '2000' / '2', '12' / '0';
+
+SELECT 50 / 2;
+SELECT 50 DIV 2;
+SELECT 5 DIV 2, -40 DIV 2, -100 DIV -20;
+SELECT '220' DIV 3, 400 DIV '3';
+
+Exercise Modulus Operator = Syntax
+
+SELECT 10 % 3;
+SELECT 20 % 3, 30 % 5;
+SELECT '20' % 5, '500' % '300';
+
+SELECT 50 MOD 2;
+SELECT 5 MOD 2, -40 MOD 2, -100 MOD -20;
+SELECT '220' MOD 3, 400 MOD '3';
+SELECT 70 MOD 3, MOD(10,3);
+
+
+-----------------------------------------------------------------------------------
+
+CRUD 
+Create / Read / Update/ Delete
+
+CREATE DATABASES - Create a new Databases
+CREATE TABLE - create a new TABLE
+
+ALTER database - modify a database 
+ALTER TABLE
+
+DROP DATABASE - delete a database
+DROP TABLE
+
+INSERT INTO - inserts new data into a database
+
+
+SELECT - extracts data from Databases
+
+UPDATE - update data in a Databases
+
+DELETE - delete data in a Databases
+
+
+
+
+
+
+ 

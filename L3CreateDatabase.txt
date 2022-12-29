@@ -1,0 +1,23 @@
+=> Show Database;
+
+SHOW DATABASES;
+
+=> Create Database
+
+CREATE DATABASES wdf7043;
+
+=> DELETE Database
+DROP DATABASE wdf7043;
+
+=> Choose Database
+USE
+
+=> ABout Database Naming;
+
+*Can Create
+book_stop; SchoolApp; bookingsystem;
+
+CAN't CREATE;
+
+Can Create My App;
+Can Create My$#App;

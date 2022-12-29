@@ -1,0 +1,39 @@
+=> NULL and NOTNULL 
+
+CREATE TABLE IF NOT EXISTS students(
+    name VARCHAR(10),
+    age INT(5);
+);
+
+DESC students;
+
+INSERT INTO students(name, age)
+VALUES('aung aung', 20);
+
+INSERT INTO students(name)
+VALUES ('Khine');
+
+INSERT INTO students(age)
+VALUES (20);
+
+INSERT INTO students ()
+VALUES ();
+
+INSERT INTO students
+VALUES ()
+
+DROP TABLE IF EXISTS students;
+
+
+=Exercise (multi)
+ALTER TABLE itaccessories
+ADD COLUMN status INT AFTER brand,
+ADD COLUMN createdby INT NOT NULL AFTER status;
+
+DESC itaccessories;
+SELECT * FROM itaccessories;
+
+INSERT INTO itaccessories(unitprice,item,stock,countryorigin,brand,madeby,status,createdby)
+VALUES (10,'keyboard', 30,'china', 'a4tech','logitech', 1001, 100);
+
+

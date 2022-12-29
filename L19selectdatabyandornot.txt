@@ -1,0 +1,152 @@
+=> And Syntax
+
+AND sat yin 2 khu ma phyit ya
+
+SELECT * FROM tablename
+WHERE condition1 AND condition2 AND condition3...;
+
+CREATE TABLE IF NOT EXISTS customers(
+    id INT NOT NULL,
+    firstname VARCHAR(20) NOT NULL,
+    lastname VARCHAR(20) NOT NULL,
+    age INT,
+    gender VARCHAR(8) NOT NULL DEFAULT 'male',
+    amount INT(12) DEFAULT '0',
+    city VARCHAR(30) NOT NULL,
+    country VARCHAR(30) NOT NULL,
+
+)
+
+ALTER TABLE customers;
+ADD PRIMARY KEY (id)
+
+ALTER TABLE customers
+MODIFY id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+DESC customers;
+SHOW INDEX FROM customers;
+SELECT * FROM customers;
+
+
+INSERT INTO(firstname,lastname,age,gender,amount,city,country)
+VALUES ('aung','aung',20,'male',200000,'mandalay','myanmar')
+ ('aung','aung',30,'male',200000,'Bangkok','Thailand')
+  ('maung','aung',40,'Female',400000,'Sule','myanmar')
+   ('kaung','kaung',50,'male',800000,'8mile','myanmar')
+    ('Tun','aung',60,'male',100000,'mandalay','myanmar')
+     ('Phoe','aung',70,'male',900000,'mandalay','myanmar')
+
+
+SELECT * FROM customers;
+SELECT firstname,lastname,city FROM customers
+
+SELECT * FROM customers
+WHERE country = 'myanmar';
+
+
+SELECT * FROM customers
+WHERE gender = 'male';
+
+SELECT * FROM customers
+WHERE gender = 'MALE'; //works , not case-sensitive
+
+
+SELECT * FROM customers
+WHERE gender = 'male' AND country='Thailand' AND age = 30;
+
+
+OR // Syntax
+
+SELECT * FROM tablename;
+WHERE condition1 OR condition2 OR condition3 ...; 
+
+
+-------------------------------------------------
+
+NOT Syntax
+
+SELECT * FROM customers;
+WHERE NOT condition1;
+
+SELECT * FROM customers;
+WHERE NOT country = 'myanmar';
+
+SELECT * FROM customers;
+WHERE NOT city = 'mandalay';
+
+
+=> AND + OR + NOT
+
+SELECT * FROM customers
+WHERE country = 'myanmar' AND NOT city = 'mandalay';
+
+SELECT * FROM customers
+WHERE country = 'myanmar' AND NOT city = 'yangon' AND NOT city = 'mandalay';
+
+SELECT * FROM customers
+WHERE country = "myanmar" AND ( city = "bago" OR city = "mandalay");
+
+---------------------------------------------------
+
+SELECT * FROM customers
+WHERE firstname = 'kaung';
+
+SELECT * FROM customers
+WHERE firstname = "KAUNG";   /not case sensitive
+
+
+SELECT * FROM customers
+WHERE firstname LIKE "KAUNG"; 
+
+----------------------------------
+
+=> <> / != (Not equal)
+
+SELECT * FROM customers;
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE city <> 'mandalay';
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE city != 'mandalay';
+
+SELECT id,firstname,lastname,city,country FROM customers 
+WHERE NOT city = 'mandalay';
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE NOT city LIKE 'mandalay';
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE NOT city 'mandalay'; /////error
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE city NOT LIKE 'mandalay';
+
+SELECT id,firstname,lastname,city,country FROM customers
+WHERE NOT city LIKE 'mandalay';
+
+
+SELECT * FROM customers
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount = 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount < 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount > 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount <= 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount >= 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount <> 200000;
+
+SELECT id,firstname,lastname,city,amount FROM customers
+WHERE amount LIKE 200000;
+
+
+

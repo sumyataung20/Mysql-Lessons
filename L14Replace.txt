@@ -1,0 +1,46 @@
+=> Replace
+
+=> Syntax
+
+SELECT REPLACE(original, old, new);
+
+-----------------------------------------------
+
+SELECT REPLACE('Hello World', 'Hell', 'Zer')
+
+**no action
+**case sensitive
+SELECT REPLACE('Hello World', 'hell', 'ZER');
+SELECT REPLACE('Hello World', 'hello', 'ZER);
+
+
+SELECT REPLACE('Hello World', 'o', '0') //Hell0 W0rld
+
+SELECT REPLACE('Hello World', 'l', 7)
+
+SELECT REPLACE('coffee milk bread toast', ' ',' and ')
+
+SELECT city FROM persons;
+
+SELECT REPLACE(city,'m','M') FROM persons;
+
+SELECT REPLACE(city,'m','M') AS City FROM persons
+
+SELECT REPLACE(city,'a','A')AS CITY FROM persons;
+
+
+
+-------------------------------------------------------------------
+
+=> REPLACE() with SUBSTRING() and CONCAT()
+
+SELECT SUBSTRING(city,1,5) FROM persons;
+
+SELECT SUBSTRING(REPLACE(city,'a','A'),1,5) FROM persons;
+
+SELECT CONCAT(SUBSTRING(REPLACE(address, 'n', 'N'),1,10),'....' ) FROM persons;
+
+SELECT CONCAT(SUBSTRING(REPLACE(address, 'n', 'N'),1,10),'....' ) AS STREET FROM persons;
+
+=> AS alias if more than two word, use underscore or single/double quotes 'short address' / short_address
+

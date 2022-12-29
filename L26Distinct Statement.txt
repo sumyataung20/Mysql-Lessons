@@ -1,0 +1,27 @@
+=> DISTINCT STATEMENT (Bone Htote)
+
+=Syntax
+
+SELECT DISTINCT column1,column2,...
+FROM tablename;
+
+-------------------------------------------
+
+=EXERCISE 
+
+SELECT * FROM customers;
+
+SELECT city FROM customers;
+
+SELECT DISTINCT city FROM customers;
+
+SELECT DISTINCT city FROM customers ORDER BY city;
+
+****ERROR**** (the colname in the codition must be the DISTINCT colname)
+SELECT DISTINCT city FROM customers ORDER BY amount;
+
+SELECT COUNT(DISTINCT city) FROM customers
+
+
+
+

@@ -1,0 +1,105 @@
+=> Primary key
+
+Method 1
+
+CREATE TABLE IF NOT EXISTS persons(
+    id INT NOT NULL PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT()
+);
+
+
+Method2
+
+CREATE TABLE IF NOT EXISTS persons(
+    id INT NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT,
+    PRIMARY KEY (id)
+)
+
+=EXERCISE
+
+CREATE TABLE IF NOT EXISTS computers(
+    brand VARCHAR(255),
+    type VARCHAR(255),
+
+);
+
+DESC computers;
+
+INSERT INTO computers(brand,type)
+VALUES ('asus',''china),
+       ('asus', 'china');
+      
+
+#adding primary key to string VALUES
+
+CREATE TABLE IF NOT EXISTS computers(
+    brand VARCHAR(255),
+    type VARCHAR(255),
+    PRIMARY KEY (brand)
+);
+
+DESC computers
+SHOW INDEX FROM computers;
+
+
+CREATE TABLE IF NOT EXISTS computers(
+    id INT NOT NULL PRIMARY KEY,
+    brand VARCHAR(255),
+    type VARCHAR
+)
+
+INSERT INTO computers(id,brand,type)
+VALUES(1,'ausus','china)
+
+CREATE TABLE IF NOT EXISTS computers(
+    id NOT NULL AUTO_INCREMENT,
+    brand VARCHAR(255),
+    type VARCHAR(255),
+    PRIMARY KEY(id)
+);
+
+INSERT INTO computers(id,brand,type) (Id ma pay lel auto_increment moh auto 1 phyit, error ma tat)
+VALUES('ausus','china)
+
+INSERT INTO computers(id,brand,type)
+VALUES(2,'ausus','china)
+
+INSERT INTO computers(id,brand,type)
+VALUES(10,'acer','china)
+
+INSERT INTO computers(brand,type) //id 11
+VALUES('samsung','korea)
+
+
+
+SELECT * FROM computers
+
+
+CREATE TABLEIF NOT EXISTS members(
+    id INT NOT NULL AUTO_INCREMENT,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    status VARCHAR(100) NOT NULL DEFAULT "employed",
+    PRIMARY KEY (id)
+
+);
+
+DESC members;
+
+SHOW INDEX FROM members;
+
+
+INSERT INTO members(firstname, lastname, age, status)
+VALUES('Aye', 'Mya', 25, 'employed')
+
+
+INSERT INTO members(firstname, lastname, age, status)
+VALUES('Hnin', 'Mya', 25)
+
+
